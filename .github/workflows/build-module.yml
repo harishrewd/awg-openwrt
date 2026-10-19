@@ -4,26 +4,23 @@ on:
   push:
     tags:
       - "v*.*.*"
-  workflow_call:
-    inputs:
-      tag_name:
-        required: true
-        type: string
   workflow_dispatch:
     inputs:
       version:
-        description: 'OpenWRT version (e.g., 24.10.5)'
+        description: 'OpenWRT version (e.g., 25.12.6)'
         required: true
+        default: '25.12.6'
         type: string
       targets:
         description: 'Targets (comma-separated, optional)'
         required: false
+        default: 'mediatek'
         type: string
       subtargets:
         description: 'Subtargets (comma-separated, optional)'
         required: false
+        default: 'filogic'
         type: string
-
 
 jobs:
   generate-config:
