@@ -191,6 +191,13 @@ jobs:
           echo "Built packages:"
           ls -la awgrelease/
 
+       - name: Upload local build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: amneziawg-packages-mediatek
+          path: awgrelease/*.apk
+
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
